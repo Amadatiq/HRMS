@@ -1,0 +1,63 @@
+{% extends 'base.html'%}
+
+{%block content%}
+    
+
+    
+
+
+
+
+
+
+    <!--main content start-->
+    <section id="main-content">
+      <section class="wrapper">
+        <h3>
+          <i class="fa fa-angle-right"></i> Leave Details for {{leaves.employee.name}}
+        </h3>
+        <div class="row mb">
+          <!-- page start-->
+          <div class="content-panel">
+            <div class="adv-table">
+              <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered" id="hidden-table-info">
+                <thead>
+                  
+                </thead>
+                <tbody>
+                  <tr class="gradeX">
+                    <td>Annual Leaves</td>
+                    <td>10</td>
+                    <td>Remaining Annual Leaves</td>
+                    <td>10</td>
+                  </tr>
+                  <tr class="gradeC">
+                    <td>Casual Leaves</td>
+                    <td>20</td>
+                    <td>Remaining Casual Leaves</td>
+                    <td>20</td>
+                  </tr>
+                  <tr class="gradeA">
+                    <td>Sick Leaves</td>
+                    <td>11</td>
+                    <td>Remaining Sick Leaves</td>
+                    <td>11</td>
+                  </tr>
+                  <tr>
+                    <th><b><i>Total Leaves</i></b></th>
+                    <th>41</th>
+                    <th><b><i>Remanining Total Leaves</i></b></th>
+                    <th>41</th>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!-- page end-->
+        </div>
+        <!-- /row -->
+      </section>
+      <!-- /wrapper -->
+    </section>
+    <!-- /MAIN CONTENT -->
+{%endblock content%}

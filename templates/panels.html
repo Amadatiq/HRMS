@@ -1,0 +1,110 @@
+{% extends 'base.html'%}
+
+{%block content%}
+    <!-- **********************************************************************************************************************************************************
+        MAIN CONTENT
+        *********************************************************************************************************************************************************** -->
+    <!--main content start-->
+    <section id="main-content">
+      <section class="wrapper">
+        <h3><i class="fa fa-angle-right"></i> Employees Record Primaco</h3>         
+        <!-- /row -->
+       
+          <div class="col-lg-12">
+            <form method="get">
+              {{myFilter.form}}
+              <button class="btn btn-primary" type="submit">Search</button>
+            </form>
+              <section id="no-more-tables">
+                <table class="table table-bordered table-striped table-condensed cf">
+                  <thead class="cf">
+                    <tr>
+                      <th>Name</th>
+                      <th>Family Members</th>
+                      <th class="numeric">Joining Date</th>
+                      <th class="numeric">Experience ( Years )</th>
+                      <th class="numeric">Contact</th>
+                      <th class="numeric">Address</th>
+                      <th class="numeric">Designation</th>
+                      <th class="numeric">Department</th>
+                      <th class="numeric">CV</th>
+                      <th class="numeric">Actions</th>
+        
+                    </tr>
+                  </thead>
+                  <tbody>
+        <!--             name = models.CharField(max_length=100)
+  family = models.IntegerField()
+  doj = models.DateField(("Date"), default=timezone.now())
+  exp = models.IntegerField()
+  phone = models.CharField(max_length=14)
+  address = models.TextField()
+  position = models.ForeignKey('Position' , on_delete=models.CASCADE , default="" )
+  dept =
+ -->
+
+
+                    {% for displ in disp%}
+                    <tr>
+                      <td data-title="Code"><a href="{% url 'profile' displ.pk %}">{{displ.name}}</a></td>
+                      <td data-title="Company">{{displ.family}}</td>
+                      <td class="numeric" data-title="Price">{{displ.doj}}</td>
+                      <td class="numeric" data-title="Change">{{displ.exp}} Year(s)</td>
+                      <td class="numeric" data-title="Change %">{{displ.phone}}</td>
+                      <td class="numeric" data-title="Open">{{displ.address}}</td>
+                      <td class="numeric" data-title="High">{{displ.position}}</td>
+                      <td class="numeric" data-title="Low">{{displ.dept}}</td>
+                      {% if displ.cv %}
+                      <td class="numeric" data-title="Low">
+                        <a href="{{ displ.cv.url }}">CV</a> 
+                        </td>
+                       
+                      {% else %}
+
+                      <td data-title="Open">No CV</td>
+                      {% endif %}
+                       <td class="numeric" data-title="Low"> <a href="eremauth/{{displ.pk}}" class="btn btn-warning btn-sm" role="button">Delete</a> </td>
+
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </section>
+            </div>
+            <!-- /content-panel -->
+          </div>
+          <!-- /col-lg-12 -->
+        </div>
+        <!-- /row -->
+      </section>
+      <!-- /wrapper -->
+    </section>
+    <!-- /MAIN CONTENT -->
+<script>
+    const data = '{{qs_json}}'
+    console.log(data)
+
+    const rdata = JSON.parse(data.replace(/&quot;/g, '"'))
+    console.log(rdata)
+
+    const input = document.getElementById('search_here')
+    console.log(input)
+
+    let filteredArr = []
+
+    input.addEventListener('keyup', (e)=>{
+        box.innerHTML = ""
+        filteredArr = rdata.filter(info=> info['name'].includes(e.target.value))
+        console.log(filteredArr)
+        if (filteredArr.length > 0){
+            filteredArr.map(info=>{
+                box.innerHTML += `<b>${info['name']}</b><br>`
+            })
+        } else {
+            box.innerHTML = "<b>No results found...</b>"
+        }
+    })
+
+</script>
+
+{% endblock content%}

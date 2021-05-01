@@ -1,0 +1,57 @@
+{% extends 'base.html'%}
+
+{%block content%}
+    <!-- **********************************************************************************************************************************************************
+        MAIN CONTENT
+        *********************************************************************************************************************************************************** -->
+    <!--main content start-->
+    <section id="main-content">
+      <section class="wrapper">
+        <h3><i class="fa fa-angle-right"></i> Departments Record Primaco</h3>         
+        <!-- /row -->
+        <div class="row mt">
+          <div class="col-lg-12">
+            <div class="content-panel">
+              <h4><i class="fa fa-angle-right"></i> Departments</h4>
+              <section id="no-more-tables">
+                <table class="table table-bordered table-striped table-condensed cf">
+                  <thead class="cf">
+                    <tr>
+                      <th>Deparment Name</th>
+                      <th class="numeric">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+        <!--             name = models.CharField(max_length=100)
+  family = models.IntegerField()
+  doj = models.DateField(("Date"), default=timezone.now())
+  exp = models.IntegerField()
+  phone = models.CharField(max_length=14)
+  address = models.TextField()
+  position = models.ForeignKey('Position' , on_delete=models.CASCADE , default="" )
+  dept =
+ -->
+
+
+                    {% for displ in disp%}
+                    <tr>
+                      <td data-title="Code">{{displ.title}}</td>
+                      <td class="numeric" data-title="Low"> <a href="dremauth/{{displ.pk}}" class="btn btn-warning btn-sm" role="button">Delete</a> </td>
+                
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </section>
+            </div>
+            <!-- /content-panel -->
+          </div>
+          <!-- /col-lg-12 -->
+        </div>
+        <!-- /row -->
+      </section>
+      <!-- /wrapper -->
+    </section>
+    <!-- /MAIN CONTENT -->
+
+{% endblock content%}

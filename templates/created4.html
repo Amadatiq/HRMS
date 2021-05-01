@@ -1,0 +1,59 @@
+{% extends 'base.html'%}
+
+{%block content%}
+    <!-- **********************************************************************************************************************************************************
+        MAIN CONTENT
+        *********************************************************************************************************************************************************** -->
+    <!--main content start-->
+    <section id="main-content">
+      <section class="wrapper">
+        <h3><i class="fa fa-angle-right"></i> Employees Record Primaco</h3>         
+        <!-- /row -->
+        <div class="row mt">
+          <div class="col-lg-12">
+            <div class="content-panel">
+              <h4><i class="fa fa-angle-right"></i> Employees</h4>
+              <section id="no-more-tables">
+                <table class="table table-bordered table-striped table-condensed cf">
+                  <thead class="cf">
+                    <tr>
+                      <th>Authentication</th>
+                      <th class="numeric">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+        <!--             name = models.CharField(max_length=100)
+  family = models.IntegerField()
+  doj = models.DateField(("Date"), default=timezone.now())
+  exp = models.IntegerField()
+  phone = models.CharField(max_length=14)
+  address = models.TextField()
+  position = models.ForeignKey('Position' , on_delete=models.CASCADE , default="" )
+  dept =
+ -->
+
+
+                    
+                    <tr>
+
+
+                      <td class="numeric" data-title="Low">Are you Sure you Want to Delete {{context.pk}}
+                      <td class="numeric" data-title="Low"><a href="/eremove/{{pk}}">YES</a> - OR - <a href="/eview">NO</a> </td>
+                
+                    </tr>
+               
+                  </tbody>
+                </table>
+              </section>
+            </div>
+            <!-- /content-panel -->
+          </div>
+          <!-- /col-lg-12 -->
+        </div>
+        <!-- /row -->
+      </section>
+      <!-- /wrapper -->
+    </section>
+    <!-- /MAIN CONTENT -->
+
+{% endblock content%}

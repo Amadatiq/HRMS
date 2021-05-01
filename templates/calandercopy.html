@@ -1,0 +1,65 @@
+{% extends 'base.html'%}
+{% load crispy_forms_tags %}
+
+{%block content%}
+    <!-- **********************************************************************************************************************************************************
+        MAIN CONTENT
+        *********************************************************************************************************************************************************** -->
+
+
+
+    <!--main content start-->
+    <section id="main-content" class="center">
+      <section class="wrapper">
+        <h3><i class="fa fa-angle-right"></i> Add Employee</h3>
+        <!-- BASIC FORM ELELEMNTS -->
+        <div class=".col-md-1">
+          <div class=".col-xs-12 .col-sm-6 .col-md-8">
+            <h4 class="title">Please Enter Employee Leave Details</h4>
+            <div id="message"></div>
+
+ <form action='eadd' method="POST" enctype="multipart/form-data" >
+    {% csrf_token %}        
+    <div class="container">
+    <div class="row">
+    <div class="col-4">
+    {{form.employee.name|as_crispy_field}}
+    </div>
+<!--     <div class="col-4">
+    {{form.type|as_crispy_field}}
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-4">
+    {{form.from_date|as_crispy_field}}
+    </div>
+    <div class="col-4">  
+    {{form.to_date|as_crispy_field}}
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-4">
+    {{form.reason|as_crispy_field}}
+    </div>
+ -->    </div>
+    </div>
+    <button type="submit" class="btn btn-round btn-info">Save</button>
+  </form>ype="submit" class="btn btn-round btn-info">Save</button>
+  </form>
+
+
+
+
+          </div>
+
+         
+        </div>
+        <!-- /row -->
+
+
+        <!-- /row -->
+      </section>
+      <!-- /wrapper -->
+    </section>
+
+    {%endblock content%}

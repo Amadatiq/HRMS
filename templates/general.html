@@ -1,0 +1,113 @@
+{% extends 'base.html'%}
+{% load crispy_forms_tags %}
+
+{%block content%}
+    <!-- **********************************************************************************************************************************************************
+        MAIN CONTENT
+        *********************************************************************************************************************************************************** -->
+
+
+
+    <!--main content start-->
+    <section id="main-content" class="center">
+      <section class="wrapper">
+        <h3><i class="fa fa-angle-right"></i> Add Employee</h3>
+        <!-- BASIC FORM ELELEMNTS -->
+        <div class=".col-md-1">
+          <div class=".col-xs-12 .col-sm-6 .col-md-8">
+            <h4 class="title">Please Enter Employee Details</h4>
+            <div id="message"></div>
+
+    <form action='' method="POST" enctype="multipart/form-data" >
+      {% csrf_token %}        
+      <div class="container">
+        <div class="row">
+          <div class="col-4">
+            {{form.name|as_crispy_field}}
+          </div>
+           <div class="col-4">
+            {{form.fname|as_crispy_field}}
+          </div>
+          <div class="col-4">
+           {{form.cnic|as_crispy_field}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            {{form.position|as_crispy_field}}
+          </div>
+          <div class="col-4">  
+            {{form.dept|as_crispy_field}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            {{form.doj|as_crispy_field}}
+          </div>
+          <div class="col-4">
+            {{form.exp|as_crispy_field}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            {{form.phone|as_crispy_field}}
+          </div>
+          <div class="col-4">
+            {{form.address|as_crispy_field}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            {{form.family|as_crispy_field}} 
+          </div>
+        </div>
+        <div class="row" >
+          <div class="col-2">
+            {{form.cv|as_crispy_field}}
+          </div>
+          <div class="col-2"> 
+            {{form.ppic|as_crispy_field}}
+          </div>
+          </div>      
+        <div class=".col-md-1">
+          <div class=".col-xs-12 .col-sm-6 .col-md-8">
+            <h4 class="title">Education Details</h4>
+            <div id="message"></div>
+            <div class="row">
+              <div class="col-4">
+                {{form.matric|as_crispy_field}}
+              </div>
+              <div class="col-4">
+                {{form.fsc|as_crispy_field}}
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-4">
+                {{form.bs|as_crispy_field}}
+              </div>
+            <div class="col-4">  
+              {{form.ms|as_crispy_field}}
+            </div>
+        </div>
+        <div class="row">
+        <div class="col-4">
+        {{form.phd|as_crispy_field}}
+        </div>
+        </div> 
+      </div>
+      <button type="submit" class="btn btn-round btn-info">Save</button>
+      </form>
+
+          </div>
+
+         
+        </div>
+        <!-- /row -->
+
+
+        <!-- /row -->
+      </section>
+      <!-- /wrapper -->
+    </section>
+
+    {%endblock content%}

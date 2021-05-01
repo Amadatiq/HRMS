@@ -1,0 +1,56 @@
+
+{%extends 'base.html'%}
+{%load static %}
+{% load mathfilters %}
+{% block content%}
+
+    <!-- **********************************************************************************************************************************************************
+        MAIN CONTENT
+        *********************************************************************************************************************************************************** -->
+    <!--main content start-->
+  <section id="main-content">
+      <section class="wrapper">
+        <h3><i class="fa fa-angle-right"></i> Employees Leave Record Primaco</h3>         
+        <!-- /row -->
+       
+          <div class="col-lg-12">
+           
+            
+              <section id="no-more-tables">
+                <table class="table table-bordered table-striped table-condensed cf">
+                  <thead class="cf">
+                    <tr>
+                      <th>Name</th>
+                      <th>Department</th>
+                      <th>Leave Type</th>
+                      <th class="numeric">From</th>
+                      <th class="numeric">To</th>
+                      <th class="numeric">Reason</th>     
+                      <th class="numeric">Day(s)</th>     
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for leave in leave%}
+                      <tr>
+                        <td data-title="Code"><a href="{% url 'liview1' leave.pk %}">{{leave.employee.name}}</a></form></td>
+                        <td data-title="Code">{{leave.employee.dept}}</td>
+                        <td data-title="Company">{{leave.type}}</td>
+                        <td class="numeric" data-title="Price">{{leave.from_date}}</td>
+                        <td class="numeric" data-title="Change">{{leave.to_date}}</td>
+                        <td class="numeric" data-title="Change %">{{leave.reason}}</td>
+                        <td class="numeric" data-title="Change %">{{ leave.to_date|sub:leave.from_date }} </td>
+                        <!-- <td class="numeric" data-title="Change %">{{ leave.to_date|sub:leave.from_date }} </td>
+ -->                      </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </section>
+            </div>
+            <!-- /content-panel -->
+          </div>
+          <!-- /col-lg-12 -->
+        </div>
+        <!-- /row -->
+      </section>
+   
+{% endblock content%}
